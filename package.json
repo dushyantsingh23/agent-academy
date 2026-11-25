@@ -1,5 +1,5 @@
 {
-  "name": "agentcraft-academy",
+  "name": "agent-academy",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -22,5 +22,13 @@
     "tailwindcss": "^4.1.4",
     "typescript": "~5.8.3",
     "vite": "^6.3.2"
-  }
+  },
+  "description": "AgentAcademy \u2014 a free, interactive handbook for software engineers to learn AI agents end to end: LLM fundamentals, agents, tools & MCP, models & training, multi-agent & A2A, GCP, testing, scaling, deployment, case studies and interview prep.",
+  "license": "Apache-2.0",
+  "author": "Dushyant Singh",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dushyantsingh23/agent-academy.git"
+  },
+  "homepage": "https://agentacademy.web.app"
 }
