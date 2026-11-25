@@ -659,7 +659,7 @@ export function ChapterLLMBasics(_props: { isCompleted: boolean; onComplete: () 
       <AttentionExample />
 
       <Callout type="tip" title="Want to go deeper?">
-        Chapter 18 has an interactive self-attention visualizer and the original &ldquo;Attention Is All You
+        Chapter 19 has an interactive self-attention visualizer and the original &ldquo;Attention Is All You
         Need&rdquo; paper. For a visual walk-through, try the Transformer Explainer and LLM Visualization links at
         the end of this chapter.
       </Callout>
@@ -736,11 +736,11 @@ export function ChapterLLMBasics(_props: { isCompleted: boolean; onComplete: () 
           </thead>
           <tbody className="divide-y divide-stone-200 bg-[#FFFDF9] dark:divide-stone-800 dark:bg-stone-950/60">
             {[
-              ['Hallucination', 'Confidently invents a citation, API or number', 'Retrieval (RAG), tools, verification steps — Ch 4, 5, 13'],
+              ['Hallucination', 'Confidently invents a citation, API or number', 'Retrieval (RAG), tools, verification steps — Ch 4, 5, 14'],
               ['Knowledge cutoff', "Doesn't know yesterday's news or your private data", 'Search & database tools, RAG — Ch 4, 5'],
               ['Stateless', 'Forgets everything between API calls', 'Memory systems & session state — Ch 4'],
               ["Can't take actions", 'Can describe how to book a flight, but not book it', 'Function calling, MCP, CLIs — Ch 5'],
-              ['Weak at long multi-step tasks', 'Loses track halfway through a 20-step job', 'Planning loops, sub-agents, multi-agent — Ch 3, 10'],
+              ['Weak at long multi-step tasks', 'Loses track halfway through a 20-step job', 'Planning loops, sub-agents, multi-agent — Ch 3, 11'],
               ['Unreliable maths & exact logic', 'Gets 37 × 491 wrong', 'Code execution tools (CodeAct) — Ch 4, 5'],
             ].map(([a, b, c]) => (
               <tr key={a}>

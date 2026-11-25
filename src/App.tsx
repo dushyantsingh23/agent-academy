@@ -36,6 +36,8 @@ import { Chapter17MasteryQuiz } from './chapters/Chapter17MasteryQuiz';
 import { ChapterLLMBasics } from './chapters/ChapterLLMBasics';
 import { ChapterPromptingApis } from './chapters/ChapterPromptingApis';
 import { ChapterCompanies } from './chapters/ChapterCompanies';
+import { ChapterOwnModel } from './chapters/ChapterOwnModel';
+import { ChapterStayCurrent } from './chapters/ChapterStayCurrent';
 import { ChapterTldr, ChapterExtrasBottom } from './components/ChapterExtras';
 
 const STORAGE_KEY = 'agentcraft_completed_chapters_v1';
@@ -46,10 +48,10 @@ export const CURRICULUM_PARTS: {
 }[] = [
   { label: 'I. AI Fundamentals', chapterNumbers: [1, 2] },
   { label: 'II. Agent Foundations', chapterNumbers: [3, 4, 5] },
-  { label: 'III. Models, Training & Frameworks', chapterNumbers: [6, 7, 8, 9] },
-  { label: 'IV. Multi-Agent, A2A & Cloud', chapterNumbers: [10, 11, 12] },
-  { label: 'V. Production: Safety, Testing, Scale', chapterNumbers: [13, 14, 15, 16] },
-  { label: 'VI. Real World, Research & Interviews', chapterNumbers: [17, 18, 19, 20] },
+  { label: 'III. Models, Training & Frameworks', chapterNumbers: [6, 7, 8, 9, 10] },
+  { label: 'IV. Multi-Agent, A2A & Cloud', chapterNumbers: [11, 12, 13] },
+  { label: 'V. Production: Safety, Testing, Scale', chapterNumbers: [14, 15, 16, 17] },
+  { label: 'VI. Real World, Research & Interviews', chapterNumbers: [18, 19, 20, 21, 22] },
 ];
 
 function BrandEmblem() {
@@ -224,6 +226,10 @@ export default function App() {
         return <ChapterLLMBasics isCompleted={isCompleted} onComplete={onComplete} />;
       case 'ch0-prompting-apis':
         return <ChapterPromptingApis isCompleted={isCompleted} onComplete={onComplete} />;
+      case 'ch-own-model-gpus':
+        return <ChapterOwnModel isCompleted={isCompleted} onComplete={onComplete} />;
+      case 'ch-stay-current':
+        return <ChapterStayCurrent isCompleted={isCompleted} onComplete={onComplete} />;
       case 'ch-companies-case-studies':
         return <ChapterCompanies isCompleted={isCompleted} onComplete={onComplete} />;
       default:
@@ -271,7 +277,7 @@ export default function App() {
                   ['ch0-llm-basics', 'Start Here'],
                   ['ch-companies-case-studies', 'Case Studies'],
                   ['ch13-interview-prep', 'Interview Prep'],
-                  ['ch16-must-read-papers', 'Papers'],
+                  ['ch-stay-current', 'Stay Current'],
                   ['ch17-mastery-quiz', 'Final Quiz'],
                 ] as [ChapterId, string][]
               ).map(([id, label]) => (

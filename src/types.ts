@@ -3,6 +3,8 @@ export type ChapterId =
   | 'ch0-llm-basics'
   | 'ch0-prompting-apis'
   | 'ch-companies-case-studies'
+  | 'ch-own-model-gpus'
+  | 'ch-stay-current'
   | 'ch1-foundations'
   | 'ch2-reasoning-memory'
   | 'ch3-tools-mcp-cli'

@@ -113,8 +113,21 @@ export const CHAPTERS: ChapterMeta[] = [
     badge: 'MLOps & Post-Training Engineer',
   },
   {
-    id: 'ch5-frameworks',
+    id: 'ch-own-model-gpus',
     number: 9,
+    title: 'Train, Run & Deploy Your Own Model (and Why GPUs)',
+    shortTitle: 'Your Own Model & GPUs',
+    subtitle: 'What open weights are, when a generic model is enough vs. when to fine-tune or self-host, real costs and timelines, why GPUs are needed and how to use them, and an end-to-end fine-tune → serve → deploy → agent walkthrough.',
+    duration: '30 min',
+    difficulty: 'Advanced',
+    xp: 350,
+    accent: 'from-emerald-600 to-cyan-500',
+    tags: ['Open Weights', 'Fine-tuning', 'QLoRA', 'GPUs', 'VRAM', 'vLLM', 'Ollama', 'Cloud Run GPU', 'Self-hosting'],
+    badge: 'Model Builder',
+  },
+  {
+    id: 'ch5-frameworks',
+    number: 10,
     title: 'Agent Frameworks & Libraries',
     shortTitle: 'Frameworks & Libraries',
     subtitle: 'An honest comparison and side-by-side code for Google ADK, LangGraph, CrewAI, OpenAI Agents SDK, PydanticAI, Vercel AI SDK and more, plus a decision wizard.',
@@ -129,7 +142,7 @@ export const CHAPTERS: ChapterMeta[] = [
   // Part IV · Multi-Agent, A2A & Cloud
   {
     id: 'ch6-multi-agent',
-    number: 10,
+    number: 11,
     title: 'Multi-Agent Systems & Orchestration',
     shortTitle: 'Multi-Agent Systems',
     subtitle: 'Supervisor, sequential, parallel fan-out, hierarchical, handoff and debate patterns — with shared state, budgets and when not to use them.',
@@ -142,7 +155,7 @@ export const CHAPTERS: ChapterMeta[] = [
   },
   {
     id: 'ch7-a2a-protocols',
-    number: 11,
+    number: 12,
     title: 'Agent-to-Agent (A2A) Communication',
     shortTitle: 'A2A & Protocols',
     subtitle: 'Agent Cards, the task lifecycle, SSE streaming, multi-turn input-required flows, and how A2A and MCP fit together.',
@@ -155,7 +168,7 @@ export const CHAPTERS: ChapterMeta[] = [
   },
   {
     id: 'ch8-gcp-agents',
-    number: 12,
+    number: 13,
     title: 'Building AI Agents on Google Cloud (GCP)',
     shortTitle: 'AI Agents on GCP',
     subtitle: 'The full GCP stack: Gemini on Vertex AI, ADK, Vertex AI Agent Engine, Memory Bank, Cloud Run, GKE, BigQuery and Model Armor — with deploy commands.',
@@ -170,7 +183,7 @@ export const CHAPTERS: ChapterMeta[] = [
   // Part V · Production
   {
     id: 'ch9-evals-safety',
-    number: 13,
+    number: 14,
     title: 'Evaluation, Observability & Security',
     shortTitle: 'Evals, Tracing & Safety',
     subtitle: 'Trajectory evaluation, LLM-as-a-judge, OpenTelemetry tracing, prompt-injection defences, least privilege and human-approval gates.',
@@ -183,7 +196,7 @@ export const CHAPTERS: ChapterMeta[] = [
   },
   {
     id: 'ch10-testing-agents',
-    number: 14,
+    number: 15,
     title: 'Testing AI Agents',
     shortTitle: 'Testing Agents',
     subtitle: 'The six-layer agent testing pyramid: tool unit tests, record-and-replay, trajectory assertions, simulated users, pass@k vs pass^k, and red-teaming.',
@@ -196,7 +209,7 @@ export const CHAPTERS: ChapterMeta[] = [
   },
   {
     id: 'ch11-scaling-agents',
-    number: 15,
+    number: 16,
     title: 'Scaling AI Agents & Problems at Scale',
     shortTitle: 'Scaling Agents',
     subtitle: 'The seven bottlenecks at scale — rate-limit storms, growing token costs, tail latency, overloaded downstream APIs, multi-tenancy — and how to fix each.',
@@ -209,7 +222,7 @@ export const CHAPTERS: ChapterMeta[] = [
   },
   {
     id: 'ch10-production-blueprints',
-    number: 16,
+    number: 17,
     title: 'Running & Deploying Agents to Production',
     shortTitle: 'Deploy & Prod Blueprints',
     subtitle: 'Containers, graceful shutdown, CI/CD eval gates, shadow and canary rollouts, kill switches, and three complete production blueprints.',
@@ -224,7 +237,7 @@ export const CHAPTERS: ChapterMeta[] = [
   // Part VI · Real World, Research & Interviews
   {
     id: 'ch-companies-case-studies',
-    number: 17,
+    number: 18,
     title: 'AI Agent Companies & Real-World Case Studies',
     shortTitle: 'Companies & Case Studies',
     subtitle: 'How Cursor, Cognition, Claude Code, Replit, Lovable, Sierra, Decagon, Perplexity, Glean and Harvey built their agents, enterprise deployments at Klarna, Uber and DoorDash, and public failures to learn from.',
@@ -237,7 +250,7 @@ export const CHAPTERS: ChapterMeta[] = [
   },
   {
     id: 'ch16-must-read-papers',
-    number: 18,
+    number: 19,
     title: 'Must-Read Papers: Transformers, Attention & Agents',
     shortTitle: 'Must-Read Papers',
     subtitle: 'An interactive self-attention visualizer and a tracked reading list from "Attention Is All You Need" and scaling laws to ReAct, CodeAct, DeepSeek-R1 and agent benchmarks.',
@@ -250,10 +263,10 @@ export const CHAPTERS: ChapterMeta[] = [
   },
   {
     id: 'ch13-interview-prep',
-    number: 19,
+    number: 20,
     title: 'AI Interview Prep: Fundamentals to System Design',
     shortTitle: 'Interview Prep',
-    subtitle: 'An 18-question concept bank from tokens to prompt injection, five Staff-level system design drills, rapid-fire deep dives, a 4-week study plan and a 45-minute interview playbook.',
+    subtitle: 'A 20-question concept bank from tokens to prompt injection, five Staff-level system design drills, rapid-fire deep dives, a 4-week study plan and a 45-minute interview playbook.',
     duration: '35 min',
     difficulty: 'Expert',
     xp: 350,
@@ -263,7 +276,7 @@ export const CHAPTERS: ChapterMeta[] = [
   },
   {
     id: 'ch17-mastery-quiz',
-    number: 20,
+    number: 21,
     title: 'Final Quiz & Mastery Check',
     shortTitle: 'Final Quiz',
     subtitle: 'Every knowledge-check question from the handbook in one place. Take a random 10-question exam, drill one chapter, or complete the full bank.',
@@ -273,6 +286,19 @@ export const CHAPTERS: ChapterMeta[] = [
     accent: 'from-emerald-600 to-amber-500',
     tags: ['Final Exam', 'All Chapters', 'Instant Explanations', 'Mastery Check'],
     badge: 'Certified AgentCraft Graduate',
+  },
+  {
+    id: 'ch-stay-current',
+    number: 22,
+    title: 'Stay Current: Newsletters, Blogs, Repos & People to Follow',
+    shortTitle: 'Stay Current',
+    subtitle: 'A curated directory of newsletters, blogs, GitHub repos, YouTube channels, podcasts, courses and people to follow, plus a sustainable routine and a hype filter.',
+    duration: '10 min',
+    difficulty: 'Beginner',
+    xp: 100,
+    accent: 'from-amber-500 to-rose-500',
+    tags: ['Newsletters', 'Blogs', 'GitHub', 'YouTube', 'Podcasts', 'LinkedIn', 'Learning Routine'],
+    badge: 'Lifelong Learner',
   },
 ];
 

@@ -45,7 +45,7 @@ const COMPANIES: Company[] = [
     ],
     traction: 'At launch (March 2024) reported 13.86% on SWE-bench unassisted, versus a previous best of about 2%. Acquired the Windsurf editor in 2025.',
     lesson: 'Reliability over long tasks is a context-engineering problem: share full context, avoid fragmenting decisions.',
-    chapters: 'Ch 3 (loop), Ch 10 (multi-agent), Ch 14 (testing)',
+    chapters: 'Ch 3 (loop), Ch 11 (multi-agent), Ch 15 (testing)',
     url: 'https://cognition.ai/blog',
   },
   {
@@ -60,7 +60,7 @@ const COMPANIES: Company[] = [
     ],
     traction: 'Launched as a research preview in February 2025 and became generally available in May 2025; it popularised the "CLI agent" category alongside OpenAI Codex CLI and Gemini CLI.',
     lesson: 'A simple agent loop with excellent tools and good permissions often beats a complex framework.',
-    chapters: 'Ch 3, Ch 5 (CLIs & MCP), Ch 13 (permissions)',
+    chapters: 'Ch 3, Ch 5 (CLIs & MCP), Ch 14 (permissions)',
     url: 'https://www.anthropic.com/engineering/claude-code-best-practices',
   },
   {
@@ -75,7 +75,7 @@ const COMPANIES: Company[] = [
     ],
     traction: 'Replit publicly reported growing annual revenue past $100M in 2025, driven largely by Agent.',
     lesson: 'Owning the runtime and deployment environment lets an agent finish the job, not just write code. (See the cautionary tale below about guardrails.)',
-    chapters: 'Ch 10 (multi-agent), Ch 16 (deploy)',
+    chapters: 'Ch 11 (multi-agent), Ch 17 (deploy)',
     url: 'https://blog.replit.com',
   },
   {
@@ -89,7 +89,7 @@ const COMPANIES: Company[] = [
     ],
     traction: 'Reported reaching around $100M ARR in roughly eight months after launch (2025).',
     lesson: 'Constraining the problem space (one stack, one workflow) makes agents dramatically more reliable.',
-    chapters: 'Ch 3 (workflows vs agents), Ch 9 (frameworks)',
+    chapters: 'Ch 3 (workflows vs agents), Ch 10 (frameworks)',
     url: 'https://lovable.dev/blog',
   },
   {
@@ -104,7 +104,7 @@ const COMPANIES: Company[] = [
     ],
     traction: 'Founded in 2023 by Bret Taylor and Clay Bavor; raised funding at multi-billion-dollar valuations in 2024–2025.',
     lesson: 'In customer-facing agents, consistency and policy compliance matter more than raw intelligence.',
-    chapters: 'Ch 13 (guardrails), Ch 14 (pass^k)',
+    chapters: 'Ch 14 (guardrails), Ch 15 (pass^k)',
     url: 'https://sierra.ai/blog',
   },
   {
@@ -118,7 +118,7 @@ const COMPANIES: Company[] = [
     ],
     traction: 'One of the fastest-growing AI support startups of 2024–2025, used by well-known consumer apps.',
     lesson: 'Let domain experts (not just engineers) author and improve agent behaviour.',
-    chapters: 'Ch 4 (procedural memory), Ch 13 (evals)',
+    chapters: 'Ch 4 (procedural memory), Ch 14 (evals)',
     url: 'https://decagon.ai',
   },
   {
@@ -146,7 +146,7 @@ const COMPANIES: Company[] = [
     ],
     traction: 'Grew into one of the most valuable enterprise AI companies, with large enterprise customers.',
     lesson: 'In enterprises, enforcing permissions inside retrieval is non-negotiable — and a moat.',
-    chapters: 'Ch 4 (RAG), Ch 15 (multi-tenancy)',
+    chapters: 'Ch 4 (RAG), Ch 16 (multi-tenancy)',
     url: 'https://www.glean.com/blog',
   },
   {
@@ -399,7 +399,7 @@ export function ChapterCompanies(_props: { isCompleted: boolean; onComplete: () 
       <SectionHeader
         eyebrow="Learn from failures"
         title="Cautionary Tales"
-        description="Public failures teach as much as successes. Each one maps to a defence covered in Chapters 13–16."
+        description="Public failures teach as much as successes. Each one maps to a defence covered in Chapters 14–17."
       />
 
       <div className="grid gap-4 md:grid-cols-3">

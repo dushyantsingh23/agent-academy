@@ -18,8 +18,8 @@ export function HomePage({
   const paths: { who: string; start: string; id: ChapterId; detail: string }[] = [
     { who: 'New to AI?', start: 'Start at Chapter 1', id: 'ch0-llm-basics', detail: 'Learn what an LLM, a token and training really are — no maths required.' },
     { who: 'Already call LLM APIs?', start: 'Jump to Chapter 3', id: 'ch1-foundations', detail: 'Build an agent loop from scratch, then add memory, tools and MCP.' },
-    { who: 'Shipping to production?', start: 'Go to Chapter 13', id: 'ch9-evals-safety', detail: 'Evals, security, testing, scaling and deployment playbooks.' },
-    { who: 'Preparing for interviews?', start: 'Go to Chapter 19', id: 'ch13-interview-prep', detail: 'Concept questions, system design drills and real case studies.' },
+    { who: 'Shipping to production?', start: 'Go to Chapter 14', id: 'ch9-evals-safety', detail: 'Evals, security, testing, scaling and deployment playbooks.' },
+    { who: 'Preparing for interviews?', start: 'Go to Chapter 20', id: 'ch13-interview-prep', detail: 'Concept questions, system design drills and real case studies.' },
   ];
 
   return (

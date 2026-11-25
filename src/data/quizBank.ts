@@ -805,6 +805,57 @@ const EXTRA_TOPICS: QuizTopic[] = [
       },
     ],
   },
+  {
+    id: 'ownmodel',
+    chapterNum: 9,
+    topic: 'Your Own Model & GPUs',
+    badge: 'Model Builder',
+    questions: [
+      {
+        id: 'q1',
+        question: "Your support agent gives wrong answers because it doesn't know your latest return policy. What should you do first?",
+        options: [
+          'Fine-tune the model on the policy document.',
+          'Add retrieval (RAG) over the policy documents — it is a knowledge gap, not a behaviour gap.',
+          'Pre-train a new model.',
+          'Raise the temperature.',
+        ],
+        correctIndex: 1,
+        explanation: 'Facts that change belong in retrieval. Fine-tuning is expensive, goes stale and still hallucinates facts.',
+      },
+      {
+        id: 'q2',
+        question: 'Why are GPUs used instead of CPUs to train and run LLMs?',
+        options: [
+          'GPUs have more storage space.',
+          'LLMs are mostly huge matrix multiplications, which GPUs run across thousands of cores in parallel with very high memory bandwidth.',
+          'CPUs cannot run Python.',
+          'GPUs make models more accurate.',
+        ],
+        correctIndex: 1,
+        explanation: 'Parallel cores, tensor cores, fast low-precision maths and high-bandwidth memory make GPUs orders of magnitude faster for this workload.',
+      },
+      {
+        id: 'q3',
+        question: 'Roughly how much GPU memory does it take just to load an 8B-parameter model in 16-bit precision?',
+        options: ['~1 GB', '~16 GB', '~160 GB', '~1.6 TB'],
+        correctIndex: 1,
+        explanation: '2 bytes per parameter × 8B parameters ≈ 16 GB, plus extra for the KV cache when serving.',
+      },
+      {
+        id: 'q4',
+        question: 'When does self-hosting an open-weight model usually beat paying per token for an API?',
+        options: [
+          'Always — self-hosting is free.',
+          'At high, steady volume (or with strict privacy/latency needs), when GPUs stay busy enough to cost less than per-token pricing.',
+          'Only for prototypes with a few users.',
+          'Never.',
+        ],
+        correctIndex: 1,
+        explanation: 'GPUs cost money 24/7. At low volume you pay for idle hardware; at high volume a busy GPU can be much cheaper per token.',
+      },
+    ],
+  },
 ];
 
 const TOPIC_TO_CHAPTER: Record<string, ChapterId> = {
@@ -825,6 +876,7 @@ const TOPIC_TO_CHAPTER: Record<string, ChapterId> = {
   ch11: 'ch11-scaling-agents',
   ch12: 'ch10-production-blueprints',
   companies: 'ch-companies-case-studies',
+  ownmodel: 'ch-own-model-gpus',
   ch16: 'ch16-must-read-papers',
   ch13: 'ch13-interview-prep',
 };

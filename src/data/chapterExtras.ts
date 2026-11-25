@@ -204,6 +204,7 @@ export const CHAPTER_EXTRAS: Record<string, ChapterExtra> = {
       'Mixture-of-Experts models compute only a few experts per token, but still need memory for all of them.',
       'Choose a model per role (router, planner, coder) and validate on your own eval set, not leaderboards alone.',
       'Routers and AI gateways cut cost and add failover across providers and regions.',
+      'Chapter 9 shows how to actually run, fine-tune and deploy an open-weight model yourself.',
     ],
     caseStudies: [
       {
@@ -231,6 +232,7 @@ export const CHAPTER_EXTRAS: Record<string, ChapterExtra> = {
       'Distillation: let a big model teach a small, cheap one using its verified outputs.',
       'MLOps for agents = versioning prompts, models, tools and evals together, and turning production traces into datasets.',
       'Climb the ladder: prompts → tools & RAG → context engineering → fine-tuning.',
+      'For a hands-on fine-tune, GPU sizing, costs and deployment walkthrough, continue to Chapter 9.',
     ],
     caseStudies: [
       {
@@ -487,7 +489,7 @@ export const CHAPTER_EXTRAS: Record<string, ChapterExtra> = {
       'Always clarify requirements and do quick cost/latency maths before drawing boxes.',
       'Default to the simplest design; justify every agent, tool and model you add.',
       'Talk about evals, guardrails and rollout — that is what separates senior answers.',
-      'Use real case studies (Chapter 17) as evidence for your trade-offs.',
+      'Use real case studies (Chapter 18) as evidence for your trade-offs.',
     ],
     reading: [
       { title: 'AI Engineering (book)', source: "Chip Huyen · O'Reilly", url: 'https://www.oreilly.com/library/view/ai-engineering/9781098166298/', type: 'Book' },
@@ -496,6 +498,56 @@ export const CHAPTER_EXTRAS: Record<string, ChapterExtra> = {
       ANTHROPIC_EFFECTIVE,
       ANTHROPIC_MULTI,
       COGNITION_MULTI,
+    ],
+  },
+
+  'ch-own-model-gpus': {
+    tldr: "Using a generic model through an API is like renting a car; running your own model is like buying one; training a model from scratch is like building a car factory. Most teams should rent. Buy (self-host an open-weight model) when privacy, volume or latency demand it, and customise it (fine-tune) only when your evals prove it helps. GPUs are the engine: LLMs are trillions of simple multiplications, and GPUs do thousands of them at once.",
+    takeaways: [
+      'Open-weight models are downloadable files (config, tokenizer, weights) you can run and modify; check the licence before shipping.',
+      'Missing knowledge → use RAG. Wrong behaviour on a narrow, high-volume task → consider fine-tuning. Strict privacy, offline or latency needs → self-host.',
+      'Costs climb ~10× per rung: prompting ($0) → hosted tuning → LoRA ($5–$500) → full fine-tune ($1k+) → pre-training ($ millions).',
+      'GPUs win because of massive parallelism, high memory bandwidth and fast low-precision maths. Size your GPU by memory: ~2 bytes per parameter to serve in 16-bit.',
+      'The path: data → QLoRA fine-tune → evaluate against a frontier baseline → serve with vLLM/Ollama → deploy (Cloud Run GPU, Vertex AI, GKE) → call it from your agent via an OpenAI-compatible endpoint.',
+      'Self-hosting only beats per-token APIs at high, steady volume — idle GPUs still cost money.',
+    ],
+    caseStudies: [
+      {
+        org: 'Meta · DeepSeek',
+        title: 'What pre-training really costs',
+        summary: "Meta's Llama 3.1 model card reports roughly 1.46M H100 GPU-hours to pre-train the 8B model and about 30.8M for the 405B model. DeepSeek's V3 technical report cites about 2.79M H800 GPU-hours for its final training run — around $5.6M at their assumed rental price, not counting research and failed experiments.",
+        lesson: 'Pre-training is a frontier-lab activity. For almost everyone else the right move is to start from an open-weight model and fine-tune or prompt it.',
+        url: 'https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/MODEL_CARD.md',
+      },
+      {
+        org: 'Andrej Karpathy',
+        title: 'nanochat: a whole ChatGPT pipeline for about $100',
+        summary: 'nanochat is a compact open-source repo that runs every stage — tokenizer training, pre-training, mid-training, supervised fine-tuning and a chat web UI — in roughly four hours on a single 8×H100 node.',
+        lesson: 'The best way to truly understand training is to run a tiny version end to end. Just don\'t confuse a $100 learning model with a production model.',
+        url: 'https://github.com/karpathy/nanochat',
+      },
+    ],
+    reading: [
+      { title: 'The Ultra-Scale Playbook: Training LLMs on GPU Clusters', source: 'Hugging Face', url: 'https://huggingface.co/spaces/nanotron/ultrascale-playbook', type: 'Guide' },
+      { title: 'How to Scale Your Model (TPUs & parallelism)', source: 'Google DeepMind', url: 'https://jax-ml.github.io/scaling-book/', type: 'Book' },
+      { title: 'Fine-tuning guides & free notebooks', source: 'Unsloth docs', url: 'https://docs.unsloth.ai', type: 'Guide' },
+      { title: 'TRL — supervised fine-tuning & RL', source: 'Hugging Face docs', url: 'https://huggingface.co/docs/trl', type: 'Docs' },
+      { title: 'vLLM documentation', source: 'vLLM', url: 'https://docs.vllm.ai', type: 'Docs' },
+      { title: 'GPU support for Cloud Run services', source: 'Google Cloud docs', url: 'https://cloud.google.com/run/docs/configuring/services/gpu', type: 'Docs' },
+      { title: 'Model Garden (deploy open models)', source: 'Google Cloud', url: 'https://cloud.google.com/model-garden', type: 'Docs' },
+      { title: 'Ollama — run models locally', source: 'ollama.com', url: 'https://ollama.com', type: 'Interactive' },
+      { title: 'The Open Source AI Definition', source: 'Open Source Initiative', url: 'https://opensource.org/ai', type: 'Guide' },
+      { title: 'Google Colab (free GPU notebooks)', source: 'Google', url: 'https://colab.research.google.com', type: 'Interactive' },
+    ],
+  },
+
+  'ch-stay-current': {
+    tldr: "You can't read everything in AI — and you don't need to. Pick a handful of trustworthy sources, spend ten minutes a day skimming, an hour a week reading deeply and an afternoon a month building something. Your fundamentals will tell you which launches actually matter.",
+    takeaways: [
+      'Use a daily digest, one weekly deep read and a monthly hands-on experiment.',
+      'Prefer primary sources (engineering blogs, papers, release notes) and hands-on testers over hype threads.',
+      'Judge launches with independent benchmarks, price and speed, and — above all — your own evals.',
+      'Follow a few practitioners closely rather than hundreds of accounts loosely.',
     ],
   },
 

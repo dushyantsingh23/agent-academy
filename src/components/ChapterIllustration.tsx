@@ -50,7 +50,7 @@ export function ChapterIllustration({ chapterNumber }: { chapterNumber: number }
       </svg>
     );
   }
-  if (chapterNumber <= 9) {
+  if (chapterNumber <= 10) {
     // Part III: models, routers, training & frameworks
     return (
       <svg viewBox="0 0 220 150" fill="none" className="w-full max-w-[220px] select-none">
@@ -67,7 +67,7 @@ export function ChapterIllustration({ chapterNumber }: { chapterNumber: number }
       </svg>
     );
   }
-  if (chapterNumber <= 12) {
+  if (chapterNumber <= 13) {
     // Part IV: multi-agent, A2A & cloud
     return (
       <svg viewBox="0 0 220 150" fill="none" className="w-full max-w-[220px] select-none">
@@ -84,7 +84,7 @@ export function ChapterIllustration({ chapterNumber }: { chapterNumber: number }
       </svg>
     );
   }
-  if (chapterNumber <= 16) {
+  if (chapterNumber <= 17) {
     // Part V: production shield
     return (
       <svg viewBox="0 0 220 150" fill="none" className="w-full max-w-[220px] select-none">

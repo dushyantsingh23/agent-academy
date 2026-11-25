@@ -408,7 +408,7 @@ const ticket = JSON.parse(resp.text ?? '{}');`,
           <li>Put stable instructions in the <strong>system</strong> message and changing data at the end (this also makes caching work — Chapter 6).</li>
           <li>Show 1–3 <strong>examples</strong> of exactly the output you want; models copy patterns very well.</li>
           <li>Tell the model what to do when it doesn&apos;t know: <em>&ldquo;If the answer isn&apos;t in the context, say so.&rdquo;</em></li>
-          <li>Keep a small set of test inputs and re-run them after every prompt change. That is the seed of evals (Chapter 13).</li>
+          <li>Keep a small set of test inputs and re-run them after every prompt change. That is the seed of evals (Chapter 14).</li>
         </ul>
       </Callout>
 
