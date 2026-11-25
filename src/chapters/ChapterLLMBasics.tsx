@@ -431,7 +431,7 @@ function EmbeddingMap() {
                   strokeWidth="2"
                 />
                 <text
-                  x={sx(w.x) + 9}
+                  x={sx(w.x) + (isSel ? 12 : 9)}
                   y={sy(w.y) + 4}
                   fill={isSel ? '#fff' : '#d6d3d1'}
                   fontSize="11"
